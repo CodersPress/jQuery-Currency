@@ -11,11 +11,11 @@ To use jQuery Currency you will need the following:
 
 ##Example Usage
 
-    &lt;script type=&quot;text/javascript&quot;&gt;
+    <script type="text/javascript">
     $(document).ready(function() {
         $('#basic').currency();
     });
-    &lt;/script&gt;
+    </script>
     
 For more examples [see the demo](blob/master/demo/index.html).
     
