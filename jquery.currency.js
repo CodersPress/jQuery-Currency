@@ -16,7 +16,7 @@
         var methods = {
 
             init : function(options) {
-                this.currency.settings = $.extend({}, this.currency.defaults, options);
+                var settings = $.extend({}, this.currency.defaults, options);
                 return this.each(function() {
                     var $element = $(this),
                          element = this;
@@ -30,25 +30,25 @@
                     
                     if(helpers.isNumber(value)){
                     
-                        if($.fn.currency.settings.convertFrom != ''){
+                        if(settings.convertFrom != ''){
                             if($element.is(':input')){
-                                $element.val(value +' '+ $.fn.currency.settings.convertLoading);
+                                $element.val(value +' '+ settings.convertLoading);
                             } else {
-                                $element.html(value +' '+ $.fn.currency.settings.convertLoading);
+                                $element.html(value +' '+ settings.convertLoading);
                             }
-                            $.post($.fn.currency.settings.convertLocation, { amount: value, from: $.fn.currency.settings.convertFrom, to: $.fn.currency.settings.region }, function(data){
+                            $.post(settings.convertLocation, { amount: value, from: settings.convertFrom, to: settings.region }, function(data){
                                 value = data;
                                 if($element.is(':input')){
-                                    $element.val(helpers.format_currency(value));
+                                    $element.val(helpers.format_currency(value, settings));
                                 } else {
-                                    $element.html(helpers.format_currency(value));
+                                    $element.html(helpers.format_currency(value, settings));
                                 }
                             });
                         } else {
                             if($element.is(':input')){
-                                $element.val(helpers.format_currency(value));
+                                $element.val(helpers.format_currency(value, settings));
                             } else {
-                                $element.html(helpers.format_currency(value));
+                                $element.html(helpers.format_currency(value, settings));
                             }
                         }
                     
@@ -62,8 +62,8 @@
 
         var helpers = {
 
-            format_currency: function(amount) {
-                var bc = $.fn.currency.settings.region;
+            format_currency: function(amount, settings) {
+                var bc = settings.region;
                 var currency_before = '';
                 var currency_after = '';
                 
@@ -153,9 +153,9 @@
                 if( currency_before == '' && currency_after == '' ) currency_before = '$';
                 
                 var output = '';
-                if(!$.fn.currency.settings.hidePrefix) output += currency_before;
-                output += helpers.number_format( amount, $.fn.currency.settings.decimals, $.fn.currency.settings.decimal, $.fn.currency.settings.thousands );
-                if(!$.fn.currency.settings.hidePostfix) output += currency_after;
+                if(!settings.hidePrefix) output += currency_before;
+                output += helpers.number_format( amount, settings.decimals, settings.decimal, settings.thousands );
+                if(!settings.hidePostfix) output += currency_after;
                 return output;
             },
             
