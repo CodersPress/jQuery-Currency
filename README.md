@@ -17,7 +17,7 @@ To use jQuery Currency you will need the following:
     });
     </script>
     
-For more examples [see the demo](blob/master/demo/index.html).
+For more examples [see the demo](http://dev7studios.com/demo/jquery-currency).
     
 ##Settings
 
