@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    
+    <title>jQuery Currency</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+    <!--<link rel="shortcut icon" href="favicon.ico">-->
+    
+    <!--[if IE]>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<script type="text/javascript" src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="scripts/modernizr-1.7.min.js"></script>
+</head>
+<body>
+
+    <div id="wrapper">
+
+        <header>
+            
+            <h1>jQuery Currency Demo</h1>
+        
+        </header>
+        
+        <section id="content">
+        
+            <h3>$('#basic').currency();</h3>
+            <p>123456.34098 becomes <span id="basic">123456.34098</span></p>
+            
+            <h3>$('#input').currency();</h3>
+            <p><input type="text" value="123456.34098" /> becomes <input type="text" id="input" value="123456.34098" /></p>
+            
+            <h3>$('#advanced').currency({ region: 'EUR', thousands: '', decimal: ',', decimals: 4 });</h3>
+            <p>123456.34098 becomes <span id="advanced">123456.34098</span></p>
+            
+            <h3>$('.multiple').currency();</h3>
+            <p>123456.34098 becomes <span class="multiple">123456.34098</span></p>
+            <p>987654.321 becomes <span class="multiple">987654.321</span></p>
+            <p>-34.57 becomes <span class="multiple">-34.57</span></p>
+            
+            <h3>$('#convert').currency({ region: 'GBP', convertFrom: 'USD' });</h3>
+            <p>123456.789 becomes <span id="convert">123456.789</span></p>
+            <p class="desc">Note converion requires the use of a PHP file</p>
+            
+            <h3>$('#invalid').currency();</h3>
+            <p><span id="invalid">This is not a number, so nothing happens</span></p>
+        </section>
+        
+        <footer>
+            <p>jQuery Currency was made by <a href="http://gilbert.pellegrom.me">Gilbert Pellegrom</a> by <a href="http://dev7studios.com">Dev7studios</a> | Released under the MIT license</p>
+        </footer>
+        
+    </div>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="../jquery.currency.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#basic').currency();
+        $('#input').currency();
+        $('#advanced').currency({ region: 'EUR', thousands: '', decimal: ',', decimals: 4 });
+        $('.multiple').currency();
+        $('#convert').currency({ region: 'GBP', convertFrom: 'USD', convertLocation: '../convert.php' });
+        $('#invalid').currency();
+    });
+    </script>
+</body>
+</html>

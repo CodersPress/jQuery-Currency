@@ -1,0 +1,245 @@
+/*=================================*/
+/* jQuery Currency Demo
+/* September 2011
+/* By: Gilbert Pellegrom
+/* http://dev7studios.com
+/*=================================*/
+
+/*====================*/
+/*=== Reset Styles ===*/
+/*====================*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-weight:inherit;
+	font-style:inherit;
+	font-size:100%;
+	font-family:inherit;
+	vertical-align:baseline;
+}
+body {
+	line-height:1;
+	color:black;
+	background:white;
+}
+table {
+	border-collapse:separate;
+	border-spacing:0;
+}
+caption, th, td {
+	text-align:left;
+	font-weight:normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content:"";
+}
+blockquote, q {
+	quotes:"" "";
+}
+/* HTML5 tags */
+header, section, footer,
+aside, nav, article, figure {
+	display: block;
+}
+
+/*===================*/
+/*=== Main Styles ===*/
+/*===================*/
+body {
+	font:14px/1.6 "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color:#000;
+	background:#fff;
+}
+
+a, a:visited {
+	color:blue;
+	text-decoration:none;
+	border-bottom:1px solid blue;
+}
+a:hover, a:active {
+	color:#000;
+	text-decoration:none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	line-height:1.2;
+	margin-bottom:0.6em;
+    /* Smooter @font-face embedding in IE */
+    /*letter-spacing: 0;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=hIEfix.png,sizingMethod=crop);
+    zoom:1;*/
+}
+h1 { /* Assume used once for page title */
+	font-size:2.2em;
+}
+h2 { /* Assume used for page headings */
+	font-size:1.9em;
+}
+h3 { /* Assume used for sub-headings */
+	font-size:1.7em;
+	margin-top:2em;
+}
+h4 {
+	font-size:1.5em;
+}
+h5 {
+	font-size:1.3em;
+}
+h6 {
+	font-size:1.2em;
+}
+p {
+	margin-bottom:1em;
+}
+
+ol, ul {
+	padding-left:30px;
+	margin-bottom:1em;
+}
+
+b, strong {
+	font-weight:bold;
+}
+i, em {
+	font-style:italic;
+}
+u {
+	text-decoration:underline;
+}
+abbr, acronym {
+	cursor:help;
+	border-bottom:.1em dotted;
+}
+td, td img { vertical-align:top; }
+sub { vertical-align:sub; font-size:smaller; }
+sup { vertical-align:super; font-size:smaller; }
+
+code {
+	font-family:Courier,"Courier New",Monaco,Tahoma;
+	background:#eee;
+	color:#000;
+	padding:0px 2px;
+}
+pre {
+	background:#eee;
+	padding:20px;
+	margin-bottom:1em;
+    /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
+    white-space: pre; /* CSS2 */
+    white-space: pre-wrap; /* CSS 2.1 */
+    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word; /* IE */
+}
+blockquote {
+	font-style:italic;
+	margin:0 0 1em 15px;
+	padding-left:10px;
+	border-left:5px solid #000;
+}
+
+/* hand cursor on clickable input elements */
+label, input[type=button], input[type=submit], button { cursor: pointer; }
+/* make buttons play nice in IE:   
+    www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button {  width: auto; overflow: visible; }
+
+/*========================*/
+/*=== Structure Styles ===*/
+/*========================*/
+#wrapper {
+    margin:50px 200px;
+    min-width:400px;
+}
+
+#content,
+footer {
+    margin-bottom:4em;
+}
+#content h3 {
+    font-family:Courier,"Courier New",Monaco,Tahoma;
+	background:#eee;
+    font-size:18px;
+	padding:2px 10px;
+    display:inline-block;
+    margin:1em 0 0.9em 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+#content span {
+    background:#FDF5D9;
+    padding:1px 4px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+#content #input {
+    background:#FDF5D9;
+}
+#content p.desc {
+    font-style:italic;
+    color:#999;
+}
+
+/*====================*/
+/*=== Input Styles ===*/
+/*====================*/
+input,
+textarea,
+select {
+	padding: 2px;
+	font: 400 1em Verdana, Sans-serif;
+	color: #666;
+	background:#ffffff;
+	border: 1px solid #999;
+	margin:2px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+	color: #000;
+	background: #fff;
+	border: 1px solid #002F59;
+}
+
+/*====================*/
+/*=== Other Styles ===*/
+/*====================*/
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+* html .clearfix { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+.pointer {
+	cursor:pointer;
+}
+
+/* Sharper Thumbnails */
+img {
+	-ms-interpolation-mode:bicubic;
+}
+
+/* Wordpress Defaults */
+img.alignright {float:right; margin:0 0 .7em 1em}
+img.alignleft {float:left; margin:0 1em .7em 0}
+img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+a img.alignright {float:right; margin:0 0 .7em 1em}
+a img.alignleft {float:left; margin:0 1em .7em 0}
+a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
