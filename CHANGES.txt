@@ -1,0 +1,6 @@
+8/11/2013 6:47PM Erick Calder <e@arix.com>
+- exported internal helper functions to format numbers as $. methods
+- corrected position of a few currencies that should be postfixed
+- added a few currency symbols
+- restructured for cleanliness
+- added this file
