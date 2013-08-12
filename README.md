@@ -7,13 +7,15 @@ Simple, unobtrusive currency converting and formatting
 To use jQuery Currency you will need the following:
 
 * jQuery v1.5+
-* PHP v4+ (if you want to use conversion)
+* PHP v4+ (to perform foreign exchange conversions)
 
 ##Example Usage
 
     <script type="text/javascript">
     $(document).ready(function() {
-        $('#basic').currency();
+        $('#basic').currency();		// formats an element on the page
+		curr = $.currency.format(2055); // $2,055
+		curr = $.currency.format(2055, { region: 'EUR' }); // € 2.055
     });
     </script>
     
@@ -32,5 +34,7 @@ The following list outlines the settings and their defualt values:
         hidePostfix: false, // Hide any postfix
         convertFrom: '', // If converting, the 3 digit ISO code you want to convert from,
         convertLoading: '(Converting...)', // Loading message appended to values while converting
-        convertLocation: 'convert.php' // Location of convert.php file
+        convertLocation: 'convert.php', // Location of convert.php file
+		defaultSymbol: '$',	// in case the currency is not found in our maps
+		separator: ''	// allows separating symbol from the amount
     });
