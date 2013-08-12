@@ -1,0 +1,8 @@
+8/11/2013 6:47PM Erick Calder <e@arix.com>
+- currently the thousands and decimal marks can be specified by the
+  caller but are not inherently bound to a currency code, even though
+  users of any given currency have an official format in which to display
+  amounts.  it would be great if by specifying the currency, the proper
+  marks were figured out
+- review all currency symbols via wikipedia for position, spacing and sign
+- add support for all currencies not currently in map
