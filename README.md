@@ -1,5 +1,3 @@
-### This repo is no longer maintained. If you would like to take over ownership please [get in touch](mailto:gilbert@pellegrom.me).
-
 #jQuery Currency
 
 Simple, unobtrusive currency converting and formatting
@@ -19,7 +17,6 @@ To use jQuery Currency you will need the following:
     });
     </script>
     
-For more examples [see the demo](http://dev7studios.com/demo/jquery-currency).
     
 ##Settings
 
