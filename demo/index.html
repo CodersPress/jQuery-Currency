@@ -14,16 +14,7 @@
 	<script type="text/javascript" src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <script src="scripts/modernizr-1.7.min.js"></script>
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-3892196-32']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
+ 
 </head>
 <body>
 
@@ -38,48 +29,63 @@
         
         <section id="content">
         
-            <h3>$('#basic').currency();</h3>
+            <h3>$("#basic").currency();</h3>
             <p>123456.34098 becomes <span id="basic">123456.34098</span></p>
             
-            <h3>$('#input').currency();</h3>
-            <p><input type="text" value="123456.34098" /> becomes <input type="text" id="input" value="123456.34098" /></p>
+            <h3>$("#input").currency();</h3>
+            <p><input type="text" value="123456.34098" /> becomes <input type="text"  id="input" value="123456.34098" /></p>
             
-            <h3>$('#advanced').currency({ region: 'EUR', thousands: '', decimal: ',', decimals: 4 });</h3>
+            <h3>$("#advanced").currency({ region: "GBP", thousands: ",", decimal: ",", decimals: 3 });</h3>
             <p>123456.34098 becomes <span id="advanced">123456.34098</span></p>
             
-            <h3>$('.multiple').currency();</h3>
+            <h3>$(".multiple").currency();</h3>
             <p>123456.34098 becomes <span class="multiple">123456.34098</span></p>
             <p>987654.321 becomes <span class="multiple">987654.321</span></p>
             <p>-34.57 becomes <span class="multiple">-34.57</span></p>
             
-            <h3>$('#convert').currency({ region: 'GBP', convertFrom: 'USD' });</h3>
-            <p>123456.789 becomes <span id="convert">123456.789</span></p>
-            <p class="desc">Note converion requires the use of a PHP file</p>
+            <h3>$("#convert").currency({ region: "GBP", convertFrom: "EUR" });</h3>
+            <p>12456.89 becomes <span id="convert">12456.89</span></p>
+            <p class="desc">Note conversion requires the use of a PHP file (sample attached)</p>
+
+<p>
+<center>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- jQuery-Currency -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-1989418460154373"
+     data-ad-slot="1609558213"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+</p>
             
-            <h3>$('#invalid').currency();</h3>
-            <p><span id="invalid">This is not a number, so nothing happens</span></p>
         </section>
         
         <footer>
-            <p>jQuery Currency was made by <a href="http://gilbert.pellegrom.me">Gilbert Pellegrom</a> by <a href="http://dev7studios.com">Dev7studios</a> | Released under the MIT license |
-            <a href="http://github.com/gilbitron/jQuery-Currency">Download</a></p>
+            <p>jQuery Currency was updated by <a href="http://coderspress.com">sMarty</a> | Released under the MIT license |
+            <a href="http://github.com/CodersPress/jQuery-Currency">Download</a></p>
         </footer>
         
     </div>
     
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="../jquery.currency.js"></script>
-    <script type="text/javascript">
+
+    <script>
+
     $(document).ready(function() {
-        $('#basic').currency();
-        $('#input').currency();
-        $('#advanced').currency({ region: 'EUR', thousands: '', decimal: ',', decimals: 4 });
-        $('.multiple').currency();
-        $('#convert').currency({ region: 'GBP', convertFrom: 'USD', convertLocation: '../convert.php' });
-        $('#invalid').currency();
+        $("#basic").currency();
+        $("#input").currency();
+        $("#advanced").currency({ region: "GBP", thousands: ",", decimal: ",", decimals: 3 });
+        $(".multiple").currency();
+        $("#convert").currency({ region: "GBP", convertFrom: "EUR", convertLocation: "../convert.php" });
     });
+
     </script>
     
-    <a href="http://github.com/gilbitron/jQuery-Currency"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub"></a>
+    <a href="http://github.com/coderspress/jQuery-Currency"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub"></a>
+
 </body>
 </html>
