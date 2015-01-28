@@ -82,6 +82,7 @@
         decimals: 2,            // How many decimals to show
         hidePrefix: false,      // Hide any prefix
         hidePostfix: false,     // Hide any postfix
+        round: true,            // if round the value or apply floor method
         defaultSymbol: '$',     // in case the currency is not found in our maps
         separator: '',          // allows separating symbol from the amount
         convertFrom: '',        // If converting, the 3 digit ISO code you want to convert from,
@@ -137,22 +138,24 @@
             var output = '';
             if (!settings.hidePrefix) output += prefix;
             output += settings.separator + $.currency.number_format(
-                amount, settings.decimals, settings.decimal, settings.thousands
+                amount, settings.decimals, settings.decimal, 
+                settings.thousands, settings.round
                 );
             if (!settings.hidePostfix) output += postfix;
             return output;
         },
         // Kindly borrowed from http://phpjs.org/functions/number_format
-        number_format: function (number, decimals, dec_point, thousands_sep) {
+        number_format: function (number, decimals, dec_point, thousands_sep, round_val) {
             number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
             var n = !isFinite(+number) ? 0 : +number,
                     prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
                     sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
                     dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
                     s = '',
-                    toFixedFix = function (n, prec) {
+                    toFixedFix = function (n, prec, round) {
                         var k = Math.pow(10, prec);
-                        return '' + Math.round(n * k) / k;
+                        var v = round_val? Math.round(n * k): Math.floor(n * k)
+                        return '' + v / k;
                     };
             // Fix for IE parseFloat(0.55).toFixed(0) = 0;
             s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
