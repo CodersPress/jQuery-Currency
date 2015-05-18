@@ -6,5 +6,11 @@ $amount = urlencode($_POST['amount']);
   $get = explode("<span class=bld>",$get);
   $get = explode("</span>",$get[1]);  
   $converted_amount = preg_replace("/[^0-9\.]/", null, $get[0]);
-echo $converted_amount;
+
+// If Same Currency Checker - returns $from
+if (is_numeric($converted_amount)) {
+        echo $converted_amount;
+    } else {
+        echo $amount;
+    }
 ?>
