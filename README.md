@@ -1,15 +1,15 @@
-#jQuery Currency
+# jQuery Currency
 
 Simple, unobtrusive currency converting and formatting
 
-##Requirements
+## Requirements
 
 To use jQuery Currency you will need the following:
 
 * jQuery Version 1.5 - Version 2.1.3
 * PHP to perform foreign exchange conversions
 
-##Example Usage
+## Example Usage
 
 Format an element on a page, using Default Settings
 
