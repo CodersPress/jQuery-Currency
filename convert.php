@@ -14,3 +14,10 @@ if (is_numeric($converted_amount)) {
         echo $amount;
     }
 ?>
+// If Same Currency Checker - returns $from
+if (is_numeric($converted_amount)) {
+        echo $converted_amount;
+    } else {
+        echo $amount;
+    }
+?>
